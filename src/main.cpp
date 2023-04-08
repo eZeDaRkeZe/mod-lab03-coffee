@@ -4,12 +4,12 @@
 
 int main() {
     Automata a;
-    a.on();
-    a.coin(10);
-    a.getMenu();
-    a.choice(2);
-    a.check();
-    a.cook();
-    a.finish();
+    a.On();
+    a.Coin(10);
+    a.GetMenu();
+    a.Choice(2);
+    a.Check();
+    a.Cook();
+    a.Finish();
     return 0;
 }
