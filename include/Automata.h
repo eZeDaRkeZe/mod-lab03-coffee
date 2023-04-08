@@ -53,7 +53,7 @@ class Automata {
     void Off();
     void Coin(double money);
     void Choice(int position);
-    void Check();
+    bool Check();
     int Cancel();
     void Cook();
     void Finish();

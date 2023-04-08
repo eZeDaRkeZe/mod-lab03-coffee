@@ -41,7 +41,7 @@ void Automata::Choice(int pos) {
 }
 
 void Automata::On() {
-    state = ON;
+    state = On;
     std::cout << "Automata is turned on." << std::endl;
 }
 
