@@ -41,22 +41,13 @@ void Automata::Choice(int pos) {
 }
 
 void Automata::On() {
-    if (state == OFF) {
-        state = WAIT;
-
-        cout << "Menu of Automata" << endl;
-        for (int i = 0; i < MENU_SIZE; i++)  {
-            cout << i + 1 << " position: " << menu[i] << endl;
-        }
-    }
-    PrintInfo(state);
+    state = ON;
+    std::cout << "Automata is turned on." << std::endl;
 }
 
 void Automata::Off() {
-    if (state == WAIT) {
-        state = OFF;
-    }
-    PrintInfo(state);
+    state = OFF;
+    std::cout << "Automata is turned off." << std::endl;
 }
 
 void Automata::Coin(double money) {
@@ -67,18 +58,14 @@ void Automata::Coin(double money) {
     PrintInfo(state);
 }
 
-void Automata::Check() {
-    if (state == CHECK) {
-        cout << "---" << cash << endl;
-        if (cash >= prices[position]) {
-            state = COOK;
-        } else {
-            cout << "Not enough money" << endl;
-            position = -1;
-            state = WAIT;
-        }
+bool Automata::Check() {
+    if (cash >= prices[chosen]) {
+        return true;
+    } else {
+        std::cout << "Not enough money." << std::endl;
+        state = ON;
+        return false;
     }
-    PrintInfo(state);
 }
 
 int Automata::Cancel() {
