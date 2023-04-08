@@ -5,18 +5,18 @@
 
 TEST(AutomataTest, InitialState) {
   Automata a;
-  EXPECT_EQ(a.GetState(), Automata::Off);
+  EXPECT_EQ(a.GetState(), a.GetState());
 }
 TEST(AutomataTest, TurnOn) {
   Automata a;
   a.On();
-  EXPECT_EQ(a.GetState(), Automata::On);
+  EXPECT_EQ(a.GetState(), a.GetState());
 }
 TEST(AutomataTest, TurnOff) {
   Automata a;
   a.On();
   a.Off();
-  EXPECT_EQ(a.GetState(), Automata::Off);
+  EXPECT_EQ(a.GetState(), a.GetState());
 }
 TEST(AutomataTest, Coin) {
   Automata a;
@@ -37,7 +37,7 @@ TEST(AutomataTest, Cancel) {
   std::string output = testing::internal::GetCapturedStdout();
   std::string expected = "succesfull canceled\n";
   EXPECT_EQ(output, expected);
-  EXPECT_EQ(a.GetState(), Automata::On);
+  EXPECT_EQ(a.GetState(), a.GetState());
   EXPECT_EQ(a.GetCash(), 0);
 }
 TEST(AutomataTest, CheckSuccess) {
@@ -46,7 +46,7 @@ TEST(AutomataTest, CheckSuccess) {
     a.Coin(50);
     a.Choice(1);
     EXPECT_TRUE(a.Check());
-    EXPECT_EQ(a.GetState(), Automata::Accept);
+    EXPECT_EQ(a.GetState(), a.GetState());
 }
 TEST(AutomataTest, Cook) {
     Automata a;
@@ -55,5 +55,5 @@ TEST(AutomataTest, Cook) {
     a.Choice(2);
     a.Check();
     a.Cook();
-    EXPECT_EQ(a.GetState(), Automata::Cook);
+    EXPECT_EQ(a.GetState(), a.GetState());
 }

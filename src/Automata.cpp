@@ -41,13 +41,22 @@ void Automata::Choice(int pos) {
 }
 
 void Automata::On() {
-    state = WAIT;
-    std::cout << "Automata is turned on." << std::endl;
+    if (state == OFF) {
+        state = WAIT;
+
+        cout << "Menu of Automata" << endl;
+        for (int i = 0; i < MENU_SIZE; i++)  {
+            cout << i + 1 << " position: " << menu[i] << endl;
+        }
+    }
+    PrintInfo(state);
 }
 
 void Automata::Off() {
-    state = OFF;
-    std::cout << "Automata is turned off." << std::endl;
+    if (state == WAIT) {
+        state = OFF;
+    }
+    PrintInfo(state);
 }
 
 void Automata::Coin(double money) {
