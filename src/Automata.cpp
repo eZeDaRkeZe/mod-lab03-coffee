@@ -41,7 +41,7 @@ void Automata::Choice(int pos) {
 }
 
 void Automata::On() {
-    state = On;
+    state = WAIT;
     std::cout << "Automata is turned on." << std::endl;
 }
 
@@ -59,11 +59,11 @@ void Automata::Coin(double money) {
 }
 
 bool Automata::Check() {
-    if (cash >= prices[chosen]) {
+    if (cash >= prices[position]) {
         return true;
     } else {
         std::cout << "Not enough money." << std::endl;
-        state = ON;
+        state = WAIT;
         return false;
     }
 }
