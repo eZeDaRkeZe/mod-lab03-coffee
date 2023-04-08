@@ -1,3 +1,5 @@
+// Copyright 2020 GHA Test Team
+
 #pragma once
 #include <iostream>
 #include <string>

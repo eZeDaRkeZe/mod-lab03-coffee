@@ -1,3 +1,5 @@
+// Copyright 2020 GHA Test Team
+
 #include "Automata.h"
 
 using std::cout;
