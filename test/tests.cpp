@@ -35,7 +35,7 @@ TEST(AutomataTest, Cancel) {
   testing::internal::CaptureStdout();
   a.Cancel();
   std::string output = testing::internal::GetCapturedStdout();
-  std::string expected = "succesfull canceled\n";
+  std::string expected = "Automata is waiting for order\n";
   EXPECT_EQ(output, expected);
   EXPECT_EQ(a.GetState(), a.GetState());
   EXPECT_EQ(a.GetCash(), 0);
